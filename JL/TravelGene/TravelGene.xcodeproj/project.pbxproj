@@ -21,6 +21,8 @@
 		862C77631C5EF89300267B68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862C77451C5EF89300267B68 /* UIKit.framework */; };
 		862C776B1C5EF89300267B68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 862C77691C5EF89300267B68 /* InfoPlist.strings */; };
 		862C776D1C5EF89300267B68 /* TravelGeneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 862C776C1C5EF89300267B68 /* TravelGeneTests.m */; };
+		86608A7F1C5F412E001EF372 /* LogedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86608A7E1C5F412E001EF372 /* LogedInViewController.m */; };
+		86608A851C5F4314001EF372 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86608A841C5F4314001EF372 /* SignInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		862C77681C5EF89300267B68 /* TravelGeneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TravelGeneTests-Info.plist"; sourceTree = "<group>"; };
 		862C776A1C5EF89300267B68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		862C776C1C5EF89300267B68 /* TravelGeneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TravelGeneTests.m; sourceTree = "<group>"; };
+		86608A7D1C5F412E001EF372 /* LogedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogedInViewController.h; sourceTree = "<group>"; };
+		86608A7E1C5F412E001EF372 /* LogedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogedInViewController.m; sourceTree = "<group>"; };
+		86608A831C5F4314001EF372 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		86608A841C5F4314001EF372 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +121,12 @@
 				862C77501C5EF89300267B68 /* JLAppDelegate.h */,
 				862C77511C5EF89300267B68 /* JLAppDelegate.m */,
 				862C77531C5EF89300267B68 /* Main.storyboard */,
+				86608A7D1C5F412E001EF372 /* LogedInViewController.h */,
+				86608A7E1C5F412E001EF372 /* LogedInViewController.m */,
 				862C77561C5EF89300267B68 /* JLViewController.h */,
 				862C77571C5EF89300267B68 /* JLViewController.m */,
+				86608A831C5F4314001EF372 /* SignInViewController.h */,
+				86608A841C5F4314001EF372 /* SignInViewController.m */,
 				862C77591C5EF89300267B68 /* Images.xcassets */,
 				862C77481C5EF89300267B68 /* Supporting Files */,
 			);
@@ -250,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86608A851C5F4314001EF372 /* SignInViewController.m in Sources */,
 				862C77521C5EF89300267B68 /* JLAppDelegate.m in Sources */,
 				862C77581C5EF89300267B68 /* JLViewController.m in Sources */,
 				862C774E1C5EF89300267B68 /* main.m in Sources */,
+				86608A7F1C5F412E001EF372 /* LogedInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +469,7 @@
 				862C77721C5EF89300267B68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		862C77731C5EF89300267B68 /* Build configuration list for PBXNativeTarget "TravelGeneTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +478,7 @@
 				862C77751C5EF89300267B68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLm-VY-d6o">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLm-VY-d6o">
                                 <rect key="frame" x="37" y="185" width="247" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -26,7 +26,7 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="oj9-Fn-d60"/>
                                 </connections>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3GW-Fe-gUV">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3GW-Fe-gUV">
                                 <rect key="frame" x="37" y="244" width="247" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -78,7 +78,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="AsA-T6-Lx4" kind="modal" identifier="signin" id="U0h-lw-DS7"/>
+                                    <segue destination="AsA-T6-Lx4" kind="modal" identifier="signin_page" id="U0h-lw-DS7"/>
                                 </connections>
                             </button>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyc-Tp-bhC">
@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="-387" y="-80"/>
         </scene>
-        <!--View Controller-->
+        <!--Loged In View Controller-->
         <scene sceneID="jRy-gd-R1s">
             <objects>
-                <viewController id="H17-mS-c4q" sceneMemberID="viewController">
+                <viewController id="H17-mS-c4q" customClass="LogedInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aNg-sj-IL7"/>
                         <viewControllerLayoutGuide type="bottom" id="u4b-FE-bOz"/>
@@ -150,6 +150,9 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logout:" destination="H17-mS-c4q" eventType="touchUpInside" id="TEW-nh-Cmx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -159,11 +162,11 @@
             </objects>
             <point key="canvasLocation" x="663" y="-80"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="FVu-uF-blf">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wr5-fo-u3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="AsA-T6-Lx4" sceneMemberID="viewController">
+                <viewController id="AsA-T6-Lx4" customClass="SignInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sGe-Rw-vNO"/>
                         <viewControllerLayoutGuide type="bottom" id="a7o-VF-CqN"/>
@@ -185,17 +188,23 @@
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="19"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uff-iS-F2F">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uff-iS-F2F">
                                 <rect key="frame" x="76" y="229" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AsA-T6-Lx4" id="0rW-ih-9r8"/>
+                                </connections>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gsz-Y5-xAo">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gsz-Y5-xAo">
                                 <rect key="frame" x="76" y="290" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AsA-T6-Lx4" id="G87-ho-s7w"/>
+                                </connections>
                             </textField>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAD-LD-Xwg">
                                 <rect key="frame" x="141" y="343" width="47" height="30"/>
@@ -203,6 +212,9 @@
                                 <state key="normal" title="Sign in">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signin:" destination="AsA-T6-Lx4" eventType="touchUpInside" id="v9v-7Z-MMT"/>
+                                </connections>
                             </button>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXG-YW-QX9">
                                 <rect key="frame" x="177" y="416" width="57" height="30"/>
@@ -223,10 +235,25 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3q9-sF-OUp" appends="YES" id="vPS-OM-uES"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="signinBtn" destination="jAD-LD-Xwg" id="rRc-Q5-dvg"/>
+                        <outlet property="txtPassword" destination="gsz-Y5-xAo" id="JIh-K1-7Rg"/>
+                        <outlet property="txtUsername" destination="Uff-iS-F2F" id="e3v-aZ-nkq"/>
+                        <segue destination="H17-mS-c4q" kind="modal" identifier="signin" id="fPv-Vq-FCT"/>
+                    </connections>
                 </viewController>
+                <tapGestureRecognizer id="3q9-sF-OUp">
+                    <connections>
+                        <action selector="backgroupTap:" destination="AsA-T6-Lx4" id="AYK-21-hl1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="121" y="479"/>
+            <point key="canvasLocation" x="127" y="479"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -234,4 +261,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="fPv-Vq-FCT"/>
+    </inferredMetricsTieBreakers>
 </document>

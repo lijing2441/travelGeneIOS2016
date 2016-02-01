@@ -79,7 +79,7 @@
 }
 
 - (IBAction)signinClicked:(id)sender {
-    [self performSegueWithIdentifier:@"signin" sender:self];
+    [self performSegueWithIdentifier:@"signin_page" sender:self];
 }
 
 - (IBAction)backgroundTap:(id)sender {
