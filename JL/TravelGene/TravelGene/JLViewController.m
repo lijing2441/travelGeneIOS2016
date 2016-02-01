@@ -50,6 +50,8 @@
 - (void)checkPasswordMatch {
     if ([_txtPassword.text isEqualToString:_txtRepeatPassword.text]) {
         NSLog(@"passwords matched");
+        // if the passwords matched successfully, register
+        [self registerNewUser];
     }
     else {
         NSLog(@"passwords do not match");
@@ -58,12 +60,26 @@
     }
 }
 
+// more logic should be considered in the future after the database set up
+// such as, check whether the entered user name exists in the DB or not
 - (void) registerNewUser {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:_txtUsername.text forKey:@"username"];
+    [defaults setObject:_txtPassword.text forKey:@"password"];
+    [defaults setBool:YES forKey:@"registered"];
     
+    [defaults synchronize];
+    
+    UIAlertView *success = [[UIAlertView alloc] initWithTitle:@"Success" message:@"You have registered as a new user" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    
+    [success show];
+    
+    // login the registered new user
+    [self performSegueWithIdentifier:@"register_success" sender:self];
 }
 
 - (IBAction)signinClicked:(id)sender {
-    
+    [self performSegueWithIdentifier:@"signin" sender:self];
 }
 
 - (IBAction)backgroundTap:(id)sender {
